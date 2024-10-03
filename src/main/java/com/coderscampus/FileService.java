@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class FileService {
-    public User[] readDataFile() {
+    public User[] readUsersFromFile() {
         try (BufferedReader fileReader = new BufferedReader(new FileReader("data.txt"))) {
             User[] userList = new User[4];
             String line;
@@ -24,7 +24,7 @@ public class FileService {
             }
             return userList;
         }catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error: unable to read data from 'data.txt' ");
         }
         return null;
     }
